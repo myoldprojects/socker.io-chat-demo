@@ -18,7 +18,7 @@ io.on('connection', (socket)=>{
     socket.on('chat message', (msg) => {
         console.log('Client message :' + msg )
         //broadcast to all clients
-        io.emit('chat message', msg)
+        io.emit('chat message', msg);
     })
     socket.on('disconnect', ()=>{
         console.log('Client disconnected');
@@ -26,5 +26,6 @@ io.on('connection', (socket)=>{
 });
 
 httpServer.listen(port, ()=>{
-   console.log('Chat app Listing on :' + port); 
+    console.log('Server listening to port: '+ port);
+    console.log('http://localhost:'+ port); 
 });
